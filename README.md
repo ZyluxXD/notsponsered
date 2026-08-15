@@ -15,6 +15,18 @@ impossible. This extension can detect sponsors, affiliate links, and self promot
 submitted to SponsorBlock yet using a local
 detection algoritm and a LLM (optional).
 
+## Demo
+
+<details>
+  <summary><b>Click to view the video demo</b></summary>
+  <br>
+
+  <p align="center">
+    <video src="https://github.com/user-attachments/assets/39e83727-ad91-477d-84b7-a84f7dbe0460" width="100%" controls></video>
+  </p>
+
+</details>
+
 ___
 
 ## What it does
