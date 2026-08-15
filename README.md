@@ -91,3 +91,17 @@ ___
   caption text.
 - The YouTube ad skipping feature seeks to the end of an ad, so you still need to click "Skip" to move to the next
   ad/video. It isn't a network ad blocker, so it won't block ads from loading.
+
+___
+
+## Local Development
+
+This extension runs directly from its source code, so there is no extra step required.
+
+Install the development dependencies and run the tests:
+
+```bash
+pnpm install
+pnpm test
+```
+After making any code changes, reload the extension from your browser’s extensions page and refresh YouTube.
