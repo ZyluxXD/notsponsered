@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>notsponsored</title>
+    <link href="./popup.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <header class="heading">
+        <img alt="" aria-hidden="true" class="mark" src="../assets/logo.svg">
+        <div>
+            <h1>notsponsored</h1>
+        </div>
+    </header>
+
+    <div class="extension-status" data-extension-state="on" id="extension-status">
+        <div class="extension-status__state">
+            <span id="extension-state-label">Extension on</span>
+        </div>
+        <label aria-label="Enable extension" class="extension-toggle">
+                <span class="switch">
+                    <input
+                            aria-label="Enable extension"
+                            id="extension-toggle"
+                            type="checkbox"
+                    >
+                    <span aria-hidden="true" class="switch-ui"></span>
+                </span>
+        </label>
+    </div>
+
+    <section aria-label="Usage statistics" class="stats">
+        <div class="usage-stats">
+            <div class="time-saved">
+                <span class="stat-val" id="time-saved">-</span>
+                <span class="stat-lbl">Time saved</span>
+            </div>
+            <div class="sponsors-skipped">
+                <span class="stat-val" id="sponsors-skipped">-</span>
+                <span class="stat-lbl">Segments skipped</span>
+            </div>
+        </div>
+    </section>
+
+    <section aria-label="YouTube ad skipping" class="ad-skip">
+        <div class="setting-toggle-row">
+            <span class="setting-toggle-copy">
+                <strong>Auto-skip YouTube ads</strong>
+                <small>Seek YouTube ads to their ends</small>
+            </span>
+            <label aria-label="Automatically skip YouTube ads" class="setting-toggle">
+                <span class="switch">
+                    <input
+                            aria-label="Automatically skip YouTube ads"
+                            id="ad-auto-skip"
+                            type="checkbox"
+                    >
+                    <span aria-hidden="true" class="switch-ui"></span>
+                </span>
+            </label>
+        </div>
+    </section>
+
+    <section class="scan-channel" id="scan-channel">
+        <div class="section-heading">
+            <h2>Current channel</h2>
+        </div>
+        <p id="scan-channel-description">Loading current channel…</p>
+        <button
+                class="secondary-button"
+                data-scan-state="active"
+                disabled
+                id="toggle-channel-scan"
+                type="button"
+        >
+            Stop scanning this channel
+        </button>
+    </section>
+
+    <section aria-labelledby="routing-heading" class="routing">
+        <div class="section-heading">
+            <h2 id="routing-heading">Detection source</h2>
+        </div>
+
+        <div class="slider-shell">
+            <input
+                    aria-describedby="routing-description"
+                    aria-label="Detection source"
+                    class="routing-slider"
+                    id="routing-mode"
+                    max="2"
+                    min="0"
+                    step="1"
+                    type="range"
+                    value="1"
+            >
+            <div aria-hidden="true" class="mode-labels">
+                <span>Local only</span>
+                <span>Local fallback</span>
+                <span>SponsorBlock</span>
+            </div>
+        </div>
+
+        <p id="routing-description">
+            Try SponsorBlock first, then use local transcript detection when needed.
+        </p>
+    </section>
+
+    <section aria-label="LLM verification" class="llm">
+        <div class="setting-toggle-row llm-enable-row">
+            <span class="setting-toggle-copy">
+                <strong>LLM verification</strong>
+                <small>Use an LLM for uncertain or missing detections</small>
+            </span>
+            <label aria-label="Enable LLM verification" class="setting-toggle">
+                <span class="switch">
+                    <input
+                            aria-label="Enable LLM verification"
+                            id="llm-enabled"
+                            type="checkbox"
+                    >
+                    <span aria-hidden="true" class="switch-ui"></span>
+                </span>
+            </label>
+        </div>
+
+        <details class="settings-disclosure" id="llm-settings">
+            <summary>
+                <span>
+                    <strong>API configuration</strong>
+                </span>
+                <span aria-hidden="true" class="disclosure-icon"></span>
+            </summary>
+
+            <div class="settings-content llm-content">
+                <div class="llm-fields">
+                    <label for="llm-endpoint">
+                        <span>OpenAI-compatible base URL</span>
+                        <input
+                                id="llm-endpoint"
+                                inputmode="url"
+                                placeholder="https://provider.example/v1"
+                                spellcheck="false"
+                                type="url"
+                        >
+                    </label>
+
+                    <label for="llm-api-key">
+                        <span>API key <small>(optional)</small></span>
+                        <input
+                                autocomplete="off"
+                                id="llm-api-key"
+                                placeholder="API key"
+                                spellcheck="false"
+                                type="password"
+                        >
+                    </label>
+
+                    <button class="secondary-button" id="load-llm-models" type="button">
+                        Load models
+                    </button>
+
+                    <label for="llm-model">
+                        <span>Model</span>
+                        <select disabled id="llm-model">
+                            <option value="">Load models first</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </details>
+    </section>
+
+    <section aria-label="Skip timing" class="timing">
+        <details class="settings-disclosure">
+            <summary>
+                <span>
+                    <strong>Skip timing</strong>
+                    <small>Trim detected segment boundaries</small>
+                </span>
+                <span aria-hidden="true" class="disclosure-icon"></span>
+            </summary>
+
+            <div class="settings-content">
+                <p>Trim sponsor segments inward</p>
+
+                <div class="timing-grid">
+                    <label for="start-trim">
+                        <span>Start later</span>
+                        <span class="number-field">
+                            <input id="start-trim" max="60" min="0" step="0.5" type="number" value="3">
+                            <span>sec</span>
+                        </span>
+                    </label>
+
+                    <label for="end-trim">
+                        <span>End earlier</span>
+                        <span class="number-field">
+                            <input id="end-trim" max="60" min="0" step="0.5" type="number" value="3">
+                            <span>sec</span>
+                        </span>
+                    </label>
+                </div>
+
+                <button id="apply-timing" type="button">Apply timing</button>
+            </div>
+        </details>
+    </section>
+
+    <p aria-live="polite" class="status" id="status"></p>
+</main>
+
+<script src="./popup.js"></script>
+</body>
+</html>

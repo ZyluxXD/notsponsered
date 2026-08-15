@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.2.2",
+    "@types/node": "^24.13.3"
+  }
+}

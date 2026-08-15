@@ -1,0 +1,27 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        role="img"
+        aria-labelledby="logo-title logo-description"
+>
+    <title id="logo-title">notsponsored logo</title>
+    <rect x="32" y="32" width="448" height="448" rx="112" fill="#E5483F"/>
+
+    <path
+            d="M122 352V160L280 352V160"
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="52"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+    />
+
+    <path
+            d="M326 194L394 256L326 318M410 194V318"
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="44"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+    />
+</svg>

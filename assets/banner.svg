@@ -1,0 +1,68 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1600 420"
+        role="img"
+        aria-labelledby="banner-title banner-description"
+>
+    <title id="banner-title">notsponsored banner logo</title>
+
+    <defs>
+        <filter id="wordmark-shadow" x="-10%" y="-20%" width="120%" height="150%">
+            <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000000" flood-opacity="0.32"/>
+        </filter>
+    </defs>
+
+    <rect width="1600" height="420" rx="64" fill="#111214"/>
+    <rect x="1.5" y="1.5" width="1597" height="417" rx="62.5" fill="none" stroke="#303137" stroke-width="3"/>
+
+    <g transform="translate(54 52) scale(.6171875)">
+        <rect x="32" y="32" width="448" height="448" rx="112" fill="#E5483F"/>
+        <path
+                d="M122 352V160L280 352V160"
+                fill="none"
+                stroke="#FFFFFF"
+                stroke-width="52"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+        />
+        <path
+                d="M326 194L394 256L326 318M410 194V318"
+                fill="none"
+                stroke="#FFFFFF"
+                stroke-width="44"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+        />
+    </g>
+
+    <g filter="url(#wordmark-shadow)">
+        <text
+                x="405"
+                y="270"
+                font-family="Arial, Helvetica, sans-serif"
+                font-size="154"
+                font-weight="900"
+                letter-spacing="-8"
+                stroke-linejoin="round"
+        >
+            <tspan
+                    fill="#FFFFFF"
+                    stroke="#E5483F"
+                    stroke-width="18"
+                    paint-order="stroke"
+            >not
+            </tspan>
+            <tspan
+                    dx="-1"
+                    fill="#E5483F"
+                    stroke="#FFFFFF"
+                    stroke-width="18"
+                    paint-order="stroke"
+            >sponsored
+            </tspan>
+        </text>
+    </g>
+
+    <path d="M411 316H1538" stroke="#303137" stroke-width="3" stroke-linecap="round"/>
+    <path d="M411 316H610" stroke="#E5483F" stroke-width="3" stroke-linecap="round"/>
+</svg>
